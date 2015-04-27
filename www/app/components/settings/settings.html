@@ -1,0 +1,34 @@
+<ion-view view-title="Settings">
+	<ion-content>
+		<div class="card padding">
+			{{ $storage.config | json }}
+		</div>
+
+		<div class="card">
+		  <label class="item item-input item-select">
+		    <div class="input-label">
+		      Option 1
+		    </div>
+		    <select ng-model="$storage.config.option1">
+		      <option value="0">Value 0</option>
+					<option value="1">Value 1</option>
+		    </select>
+		  </label>
+		</div>
+
+		<div class="card">
+			<ion-checkbox ng-model="$storage.config.option2">Option 2</ion-checkbox>
+		</div>
+
+		<div class="card">
+			<ion-toggle ng-model="$storage.config.option3" toggle-class="toggle-calm">Option 3</ion-toggle>
+		</div>
+
+		<div class="card">
+			 <div class="item item-divider">Option 4</div>
+			<ion-radio ng-model="$storage.config.option4" ng-value="'A'">Choose A</ion-radio>
+			<ion-radio ng-model="$storage.config.option4" ng-value="'B'">Choose B</ion-radio>
+			<ion-radio ng-model="$storage.config.option4" ng-value="'C'">Choose C</ion-radio>
+		</div>
+	</ion-content>
+</ion-view>
