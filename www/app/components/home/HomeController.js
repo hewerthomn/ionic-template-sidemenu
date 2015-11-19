@@ -1,19 +1,22 @@
-'use strict';
-/*
- * Home Controller
- */
-function HomeController($scope, $localStorage)
-{
-	function _init()
-	{
-		$scope.$storage  = $localStorage;
-	};
+(function(angular, undefined) {
+	'use strict';
 
-	function _apply() { if(!$scope.$$phase) $scope.$apply(); };
+	/*
+	 * Home Controller
+	 */
+	angular
+		.module('app')
+		.controller('HomeController', HomeController);
 
-	_init();
-};
+	HomeController.$inject = ['$scope', '$localStorage'];
 
-angular
-	.module('app')
-	.controller('HomeController', HomeController);
+	function HomeController($scope, $localStorage) {
+
+		function _init() {
+			$scope.$storage = $localStorage;
+		}
+
+		_init();
+	}
+
+})(window.angular);

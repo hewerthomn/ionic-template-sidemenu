@@ -1,17 +1,23 @@
-'use strict';
-/**
- * App Config
- */
-function appConfig($provide, $ionicConfigProvider) {
+(function(angular, undefined) {
+	'use strict';
 
-	// $provide.decorator("$exceptionHandler", function ($delegate) {
-	// 	return function (exception, cause) {
-	// 	};
-	// });
+	/**
+	 * App Config
+	 */
+	angular
+		.module('app')
+		.config(appConfig);
 
-	// $ionicConfigProvider.tabs.position('bottom');
-};
+	appConfig.$inject = ['$provide', '$ionicConfigProvider'];
 
-angular
-	.module('app')
-	.config(appConfig);
+	function appConfig($provide, $ionicConfigProvider) {
+
+		// $provide.decorator("$exceptionHandler", function ($delegate) {
+		// 	return function (exception, cause) {
+		// 	};
+		// });
+
+		// $ionicConfigProvider.tabs.position('bottom');
+	}
+
+})(window.angular);

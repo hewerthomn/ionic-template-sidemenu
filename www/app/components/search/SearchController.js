@@ -1,17 +1,22 @@
-'use strict';
-/**
- * Search Controller
- */
-function SearchController($scope) {
+(function(angular, undefined) {
+	'use strict';
 
-	function _init()
-	{
+	/**
+	 * Search Controller
+	 */
+	angular
+		.module('app')
+		.controller('SearchController', SearchController);
 
-	};
+	SearchController.$inject = ['$scope'];
 
-	_init();
-};
+	function SearchController($scope) {
 
-angular
-	.module('app')
-	.controller('SearchController', SearchController);
+		function _init() {
+
+		}
+
+		_init();
+	}
+
+})(window.angular);

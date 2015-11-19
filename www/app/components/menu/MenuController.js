@@ -1,40 +1,42 @@
-'use strict';
-/**
- * Menu Controller
- */
-function MenuController ($scope, $ionicModal)
-{
-	function _init()
-	{
-		$scope.loginData = null;
+(function(angular, undefined) {
+	'use strict';
 
-		$ionicModal.fromTemplateUrl('app/partials/modal-login.html', {
-	    scope: $scope
-	  }).then(function(modal) {
-	    $scope.modalLogin = modal;
-	  });
-	};
+	/**
+	 * Menu Controller
+	 */
+ 	angular
+		.module('app')
+		.controller('MenuController', MenuController);
 
-	$scope.login = function()
-	{
-		$scope.modalLogin.show();
-	};
+	MenuController.$inject = ['$scope', '$ionicModal'];
 
-	$scope.closeLogin = function()
-	{
-		$scope.modalLogin.hide();
-	};
+	function MenuController ($scope, $ionicModal) {
 
-	$scope.doLogin = function()
-	{
-		console.log('login data', $scope.loginData);
+		function _init() {
 
-		$scope.modalLogin.hide();
-	};
+			$scope.loginData = null;
 
-	_init();
-};
+			$ionicModal.fromTemplateUrl('app/partials/modal-login.html', {
+		    scope: $scope
+		  }).then(function(modal) {
+		    $scope.modalLogin = modal;
+		  });
+		}
 
-angular
-	.module('app')
-	.controller('MenuController', MenuController);
+		$scope.login = function() {
+			$scope.modalLogin.show();
+		};
+
+		$scope.closeLogin = function() {
+			$scope.modalLogin.hide();
+		};
+
+		$scope.doLogin = function() {
+			console.log('login data', $scope.loginData);
+			$scope.modalLogin.hide();
+		};
+
+		_init();
+	}
+
+})(window.angular);

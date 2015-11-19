@@ -1,17 +1,22 @@
-'use strict';
-/**
- * Settings Controller
- */
-function SettingsController($scope, $localStorage) {
+(function(angular, undefined) {
+	'use strict';
 
-	function _init()
-	{
-		$scope.$storage = $localStorage;
-	};
+	/**
+	 * Settings Controller
+	 */
+	angular
+		.module('app')
+		.controller('SettingsController', SettingsController);
 
-	_init();
-};
+	SettingsController.$inject = ['$scope', '$localStorage'];
 
-angular
-	.module('app')
-	.controller('SettingsController', SettingsController);
+	function SettingsController($scope, $localStorage) {
+
+		function _init() {
+			$scope.$storage = $localStorage;
+		}
+
+		_init();
+	}
+
+})(window.angular);
